@@ -1,3 +1,35 @@
+[x-cloak] {
+  display: none;
+}
+
+/* Nav Button */
+.nav-button {
+  display: flex;
+  gap: 12px;
+  font-weight: 600;
+  padding: 16px;
+  width: 85%;
+  border-radius: 100px;
+  user-select: none;
+  cursor: pointer;
+  transition-property: background-color;
+  transition-duration: 200ms;
+}
+
+.nav-button svg {
+  color: var(--teal-80);
+}
+
+.nav-button.active {
+  background-color: var(--accent);
+  color: white;
+}
+
+.nav-button.active svg {
+  color: white;
+}
+
+
 .secondary-logo-icon6 {
   width: 158px;
   height: 50.6px;
