@@ -6,8 +6,10 @@
     <link rel="stylesheet" href="./global.css" />
     <link rel="stylesheet" href="./decode.css" />
     <title>Pocket .ally</title>
+
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
   </head>
-  <body>
+  <body x-data="{ tab : 'decode'}">
     <div class="decode">
       <div class="dashboard10">
         <div class="menu1">
@@ -19,15 +21,17 @@
           />
 
           <div class="menu-item-parent1">
-            <button class="menu-item8">
+            <button @click="tab = 'decode'" class="menu-item8">
               <div class="analise-parent2">
                 <img class="analise-icon5" alt="" src="./public/analise.svg" />
 
                 <div class="analyse28">Decode</div>
               </div>
             </button>
+
             <div class="menu-item9"></div>
-            <div class="frame-wrapper21">
+           
+            <div @click="tab = 'blog'" class="frame-wrapper21">
               <div class="icon-blog-parent3">
                 <img
                   class="analise-icon5"
@@ -39,8 +43,10 @@
                 <div class="analyse29">Blog</div>
               </div>
             </div>
+
             <div class="menu-item9"></div>
-            <div class="frame-wrapper21">
+
+            <div @click="tab = 'my-profile'" class="frame-wrapper21">
               <div class="icon-user-parent4">
                 <img
                   class="analise-icon5"
@@ -54,7 +60,8 @@
             </div>
           </div>
         </div>
-        <div class="settings-wrapper">
+
+        <div @click="tab = 'settings'" class="settings-wrapper">
           <div class="settings2">
             <img
               class="analise-icon5"
@@ -67,8 +74,9 @@
           </div>
         </div>
       </div>
+
       <!----------------------------decode section-------------------------------->
-      <div class="hero1">
+      <div x-cloak x-show="tab === 'decode'" class="hero1">
         <div class="hero-content1">
           <div class="got-a-gut-container2">
             <p class="got-a-gut2">Got a Gut Feeling?</p>
@@ -91,15 +99,23 @@
         </div>
       </div>
       <!-------------------------end of decode section---------------------------->
+
       <!------------------------blog section-->
-              <div></div>
+      <div x-cloak x-show="tab === 'blog'">
+        Blog
+      </div>
       <!------------------------end of blog section-->
+
       <!------------------------my profile section-->
-        <div></div>
+      <div x-cloak x-show="tab === 'my-profile'">
+        Hello
+      </div>
       <!------------------------end of my profile section-->
 
       <!-----------------SETTINGS SECTION---------------->
-                <div></div>
+      <div x-cloak x-show="tab === 'settings'">
+          Ye
+      </div>
       <!-----------------END OF SETTINGS SECTION------------->
     </div>
   </body>
